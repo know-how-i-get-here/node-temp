@@ -1,0 +1,15 @@
+const http = require('http')
+const server = http.createServer((request, response)=>{
+    if(request.url === '/'){
+        response.end("Welcome to my web page")
+    }
+    if(request.url === '/about'){
+        response.end("This page 'll explain all about my webpage")
+    }
+    response.end(
+        `
+        <p>We can't find what you are trying to search</p>
+        <a href="/">back home</a>`
+    )
+})
+server.listen(5000)
